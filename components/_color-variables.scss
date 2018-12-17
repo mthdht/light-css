@@ -1,0 +1,87 @@
+// Define all color classes
+
+$purple: (
+        "base": #9c27b0,
+        "light": #d05ce3,
+        "dark": #6a0080
+);
+
+$blue: (
+        "base": #1976d2,
+        "light": #63a4ff,
+        "dark": #004ba0
+);
+
+$green: (
+        "base": #43a047,
+        "light": #76d275,
+        "dark": #00701a
+);
+
+$yellow: (
+        "base": #fdd835,
+        "light": #ffff6b,
+        "dark": #c6a700
+);
+
+$orange: (
+        "base": #ff9800,
+        "light": #ffc947,
+        "dark": #c66900
+);
+
+$red: (
+        "base": #d32f2f,
+        "light": #ff6659,
+        "dark": #9a0007
+);
+
+$grey: (
+        "base": #bdbdbd,
+        "light": #efefef,
+        "dark": #8d8d8d
+);
+
+
+$colors : (
+        "purple": $purple,
+        "blue": $blue,
+        "green": $green,
+        "yellow": $yellow,
+        "orange": $orange,
+        "red": $red,
+        "grey": $grey
+);
+
+@each $color-name, $color in $colors {
+  @each $type, $hex in $color {
+    @if $type == "base" {
+      .#{$color-name} {
+        background-color: $hex;
+      }
+      .#{$color-name}-text {
+        color: $hex;
+      }
+    }
+    @else {
+      .#{$color-name}-#{$type} {
+        background-color: $hex;
+      }
+      .#{$color-name}-text-#{$type} {
+        color: $hex;
+      }
+    }
+  }
+}
+.white {
+  background-color: white;
+}
+.white-text {
+  color: white;
+}
+.black {
+  background-color: black;
+}
+.black-text {
+  color: black;
+}
