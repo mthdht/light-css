@@ -1,0 +1,12 @@
+{
+    "name": "mthdht/magic-css",
+    "description": "A light css framework",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mthdht",
+            "email": "mthdht@gmail.com"
+        }
+    ],
+    "require": {}
+}
