@@ -41,3 +41,22 @@ $space-properties: ("margin", "padding");
   }
 }
 
+// Sizes
+
+$sizes-props: ("width", "height");
+$sizes: (0, 25, 50, 75, 100);
+
+@each $prop in $sizes-props {
+  @each $size in $sizes {
+    .#{$prop}-#{$size} {
+      #{$prop}: $size * 1%;
+    }
+    @if $size == 100 {
+      .#{$prop}-#{$size} {
+        max-#{$prop}: $size * 1%;
+      }
+    }
+  }
+}
+
+
