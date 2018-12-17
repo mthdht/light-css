@@ -42,7 +42,6 @@ $space-properties: ("margin", "padding");
 }
 
 // Sizes
-
 $sizes-props: ("width", "height");
 $sizes: (0, 25, 50, 75, 100);
 
@@ -58,5 +57,42 @@ $sizes: (0, 25, 50, 75, 100);
     }
   }
 }
+
+
+// Borders
+$border-sizes: (
+        0: 0,
+        1: 3,
+        2: 5,
+        3: 7,
+        4: 10,
+        5: 15
+);
+
+.border {
+  border: 3px solid black;
+}
+
+@each $border, $size in $border-sizes {
+  @each $card in ("top","bottom","left", "right") {
+    .border-#{$card}-#{$border} {
+      border-#{$card}: solid black;
+      border-#{$card}-width: $size + px !important;
+    }
+    .border-#{$card} {
+      border-#{$card}: 3px solid black;
+    }
+  }
+  .border-#{$border} {
+    border: $size + px solid black;
+  }
+}
+
+@each $color-name, $color in $colors {
+  .border-#{$color-name} {
+    border-color: map_get($color, "base");
+  }
+}
+
 
 
