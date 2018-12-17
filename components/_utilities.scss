@@ -1,0 +1,43 @@
+// All kinds of utilities for margin, padding, display, flex ...
+
+// space variables
+$space-default: 1rem;
+$spaces: (
+        0: 0,
+        1: ($space-default * 0.25),
+        2: ($space-default * 0.5),
+        3: $space-default,
+        4: ($space-default * 1.5),
+        5: ($space-default * 3)
+);
+
+// Margin and padding
+$space-properties: ("margin", "padding");
+
+@each $prop in $space-properties {
+  @each $space, $value in $spaces {
+    .#{$prop}-#{$space} {
+      #{$prop}: $value;
+    }
+    .#{$prop}-#{$space}-v,
+    .#{$prop}-#{$space}-t {
+      #{$prop}-top: $value;
+    }
+
+    .#{$prop}-#{$space}-v,
+    .#{$prop}-#{$space}-b {
+      #{$prop}-bottom: $value;
+    }
+
+    .#{$prop}-#{$space}-h,
+    .#{$prop}-#{$space}-l {
+      #{$prop}-left: $value;
+    }
+
+    .#{$prop}-#{$space}-h,
+    .#{$prop}-#{$space}-r {
+      #{$prop}-right: $value;
+    }
+  }
+}
+
