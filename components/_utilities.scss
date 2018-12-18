@@ -115,5 +115,14 @@ $border-radius: (
   }
 }
 
+// Displays
+$displays: (block, inline, inline-block, flex);
+
+@each $display in $displays {
+  .#{$display} {
+    display: $display;
+  }
+}
+
 
 
